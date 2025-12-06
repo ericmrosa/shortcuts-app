@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #D64545;
+    --secondary-color: #2A2A2A;
+    --danger-color: #D64545;
+    --success-color: #D64545;
+    --bg-color: #0D0D0D;
+    --card-bg: #1A1A1A;
+    --text-color: #E8E8E8;
+    --text-muted: #888888;
+    --border-color: #2A2A2A;
+    --border-radius: 12px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 4px 16px rgba(214, 69, 69, 0.3);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Form Section */
+.add-shortcut {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #B83838;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #1A1A1A;
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+/* Shortcuts List */
+.shortcuts-list {
+    margin-bottom: 40px;
+}
+
+.shortcuts-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.shortcut-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.shortcut-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.shortcut-name {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    flex: 1;
+    word-break: break-word;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    color: var(--danger-color);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: rgba(214, 69, 69, 0.2);
+}
+
+.shortcut-url {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+.shortcut-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.shortcut-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    padding: 40px 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .add-shortcut {
+        padding: 20px;
+    }
+
+    .shortcut-actions {
+        flex-direction: column;
+    }
+
+    .shortcut-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .add-shortcut {
+        padding: 15px;
+    }
+
+    .shortcut-card {
+        padding: 15px;
+    }
+}

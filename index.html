@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personal website shortcuts manager">
+    <meta name="theme-color" content="#D64545">
+    <title>My Shortcuts</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 My Shortcuts</h1>
+            <p class="subtitle">Your personal website bookmarks</p>
+        </header>
+
+        <main>
+            <section class="add-shortcut">
+                <h2>Add New Shortcut</h2>
+                <form id="shortcut-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="e.g., YouTube" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" id="url" placeholder="https://example.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Shortcut</button>
+                </form>
+            </section>
+
+            <section class="shortcuts-list">
+                <h2>Your Shortcuts</h2>
+                <div id="shortcuts-container" class="shortcuts-grid">
+                    <!-- Shortcuts will be dynamically added here -->
+                </div>
+                <p id="empty-message" class="empty-message" style="display: none;">
+                    No shortcuts yet. Add your first one above! 🚀
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Data stored locally on your device</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
