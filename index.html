@@ -18,6 +18,16 @@
         </header>
 
         <main>
+            <section class="shortcuts-list">
+                <h2>Your Shortcuts</h2>
+                <div id="shortcuts-container" class="shortcuts-grid">
+                    <!-- Shortcuts will be dynamically added here -->
+                </div>
+                <p id="empty-message" class="empty-message" style="display: none;">
+                    No shortcuts yet. Add your first one below! 🚀
+                </p>
+            </section>
+
             <section class="add-shortcut">
                 <div class="section-header">
                     <h2>Add New Shortcut</h2>
@@ -32,20 +42,10 @@
                     </div>
                     <div class="form-group">
                         <label for="url">URL</label>
-                        <input type="url" id="url" placeholder="https://example.com" required>
+                        <input type="url" id="url" placeholder="example.com or https://example.com" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Shortcut</button>
                 </form>
-            </section>
-
-            <section class="shortcuts-list">
-                <h2>Your Shortcuts</h2>
-                <div id="shortcuts-container" class="shortcuts-grid">
-                    <!-- Shortcuts will be dynamically added here -->
-                </div>
-                <p id="empty-message" class="empty-message" style="display: none;">
-                    No shortcuts yet. Add your first one above! 🚀
-                </p>
             </section>
         </main>
 

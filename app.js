@@ -64,10 +64,11 @@ class ShortcutsManager {
         const name = this.nameInput.value.trim();
         let url = this.urlInput.value.trim();
 
-        // Ensure URL has protocol
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            url = 'https://' + url;
-        }
+        // Normalize URL: ensure protocol exists, handle duplicates
+        // Remove any existing protocol first to avoid double protocols
+        url = url.replace(/^(https?:\/\/)/, '');
+        // Add https:// protocol
+        url = 'https://' + url;
 
         const shortcut = {
             id: Date.now().toString(),
