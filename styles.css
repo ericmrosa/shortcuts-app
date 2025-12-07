@@ -60,10 +60,68 @@ h2 {
 /* Form Section */
 .add-shortcut {
     background: var(--card-bg);
-    padding: 25px;
+    padding: 20px 25px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+.btn-toggle {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-toggle:hover {
+    background-color: rgba(214, 69, 69, 0.1);
+    border-color: var(--primary-color);
+}
+
+.toggle-icon {
+    display: block;
+    transition: transform 0.3s;
+}
+
+.add-shortcut.collapsed .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.form-content {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.add-shortcut.collapsed .form-content {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
 }
 
 .form-group {

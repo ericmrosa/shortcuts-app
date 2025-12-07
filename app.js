@@ -24,9 +24,29 @@ class ShortcutsManager {
         this.urlInput = document.getElementById('url');
         this.container = document.getElementById('shortcuts-container');
         this.emptyMessage = document.getElementById('empty-message');
+        this.addShortcutSection = document.querySelector('.add-shortcut');
+        this.toggleButton = document.getElementById('toggle-form');
+        this.toggleIcon = this.toggleButton.querySelector('.toggle-icon');
 
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.toggleButton.addEventListener('click', () => this.toggleForm());
+        this.loadFormState();
         this.render();
+    }
+
+    toggleForm() {
+        this.addShortcutSection.classList.toggle('collapsed');
+        const isCollapsed = this.addShortcutSection.classList.contains('collapsed');
+        this.toggleIcon.textContent = isCollapsed ? '+' : '−';
+        localStorage.setItem('formCollapsed', isCollapsed);
+    }
+
+    loadFormState() {
+        const isCollapsed = localStorage.getItem('formCollapsed') === 'true';
+        if (isCollapsed) {
+            this.addShortcutSection.classList.add('collapsed');
+            this.toggleIcon.textContent = '+';
+        }
     }
 
     loadShortcuts() {

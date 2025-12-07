@@ -19,8 +19,13 @@
 
         <main>
             <section class="add-shortcut">
-                <h2>Add New Shortcut</h2>
-                <form id="shortcut-form">
+                <div class="section-header">
+                    <h2>Add New Shortcut</h2>
+                    <button id="toggle-form" class="btn-toggle" aria-label="Toggle form">
+                        <span class="toggle-icon">−</span>
+                    </button>
+                </div>
+                <form id="shortcut-form" class="form-content">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" placeholder="e.g., YouTube" required>
